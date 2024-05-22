@@ -30,14 +30,14 @@
 ## ***ERD***
 
 ### ERD of the Project
-![display](./ERD.JPEG)
+![display](./ERD.jpeg)
 
 
 ***
 ## ***Wireframe***
 
 ### ERD of the Project
-![display](./ERD.JPEG)
+![display](./ERD.jpeg)
 
 ***
 ## ***Future Updates***
