@@ -1,7 +1,7 @@
 # Recipe Book
 ## Date: 5/23/2024
 
-### By: Osama, Jenan Alawadhi, Jenan, Fatima 
+### By: Osama, Jenan Alawadhi, Jenan Zuhair, Fatima Alajmi
 
 #### Osama's:  [GitHub](https://github.com/OsamaMohammad61) | [LinkedIn](https://www.linkedin.com/in/osama-mohammad-59baa3265/)
 #### Fatima Alajmis's:  [LinkedIn](https://www.linkedin.com/in/fatema-alajmi-0338b0290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
@@ -50,7 +50,9 @@
 
 ### ***Credits***
 
-##### WireFrame: [Canva ](https://www.canva.com/)
+##### WireFrame: [canva ](https://www.canva.com/)
+
+##### ERD: [Draw.io](https://app.diagrams.net/)
 
 ##### Markdown Guide: [SEI9 Github](https://github.com/SEI-09-Bahrain/u1_hw_markdown)
 
