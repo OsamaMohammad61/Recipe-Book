@@ -5,6 +5,6 @@
 <% allCusines.forEach((c) =>{%>
 
   <p><%=c.cuisine%></p>
-  <p><%=c._id%></p>
+  <a href="/recipe/<%=c._id%>">show detail</a>
   <%})%>
 <%- include('../partials/footer') %>
