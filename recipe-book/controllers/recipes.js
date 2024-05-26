@@ -1,6 +1,6 @@
 const Recipe = require('../models/recipe');
 const Review = require('../models/review');
-
+const Cuisines = require('../models/cuisines');
 module.exports = {
 index,
 //show,
@@ -48,3 +48,23 @@ console.log(err);
 res.render('recipes/index', { errorMsg: err.message });
 }
 }
+
+
+
+ async function index(req, res) {
+const recipes = await Recipe.find({});
+ res.render('cuisines/index', { title: 'cuisines' });
+  }
+
+exports.getAllRecipes = (req, res) => {
+    res.send('Here are all the recipes');
+};
+
+    
+
+module.exports = {
+    index,
+    new: newRecipe,
+    addRecipe,
+    getAllRecipes
+};
