@@ -40,7 +40,7 @@
 
 ### ERD of the Project
 
-![display](./ERD.jpeg)
+![display](./img/ERD.jpeg)
 
 ---
 
@@ -48,19 +48,19 @@
 
 ### Homepage
 
-![display](./Homepage.jpeg)
+![display](./img/Homepage.jpeg)
 
 ### Cusines Page
 
-![display](./cusines.jpeg)
+![display](./img/cusines.jpeg)
 
 ### Recipies page
 
-![display](./Recipe.jpeg)
+![display](./img/Recipe.jpeg)
 
 ### Reviews Page
 
-![display](./Reviews.jpeg)
+![display](./img/Reviews.jpeg)
 
 ---
 

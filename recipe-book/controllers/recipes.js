@@ -1,17 +1,18 @@
 const Recipe = require('../models/recipe');
-const Review = require('../models/reviews');
+const Review = require('../models/review');
 
 module.exports = {
 index,
-show,
+//show,
 new: newRecipe,
-create
+addRecipe
 };
 
 async function index(req, res) {
-const recipes = await Recipe.find({});
-res.render('recipes/index', { title: 'All Recipes', recipes });
+//const recipes = await Recipe.find({});
+res.render('recipes/index', { title: 'All Recipes' });
 }
+/*
 
 async function show(req, res) {
 const recipe = await Recipe.findById(req.params.id).populate('');//?
@@ -28,26 +29,22 @@ if(!castNames.includes(review.name)) {
 })
 res.render('recipes/show', { title: 'Recipe Detail', recipe, availableReviews });
 }
-
+*/
 function newRecipe(req, res) {
 // We'll want to be able to render an  
 // errorMsg if the create action fails
-res.render('recipes/new', { title: 'Add Recipe', errorMsg: '' });
+res.render('recipes/new', { title: 'Add Recipe'});
 }
 
-async function create(req, res) {
-
-    req.body.nowShowing = !!req.body.nowShowing;
-
-for (let key in req.body) {
-if (req.body[key] === '') delete req.body[key];
-}
+async function addRecipe(req, res) {
 try {
-const recipe = await Recipe.create(req.body);
+const recipe = await new Recipe(req.body);
 
-res.redirect(`/recipes/${recipe._id}`);  
+await recipe.save()
+
+res.render('recipes/show', { title: 'Add Recipe', recipe});
 } catch (err) {
 console.log(err);
-res.render('recipes/new', { errorMsg: err.message });
+res.render('recipes/index', { errorMsg: err.message });
 }
 }

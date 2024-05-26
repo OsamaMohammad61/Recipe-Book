@@ -1,79 +1,9 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-<div>Title: </div>
-<div><%= recipe.title %></div>
-<div>Release Year: </div>
-<div><%= recipe.releaseYear %></div>
-<div>Rating: </div>
-<div><%= recipe.mpaaRating %></div>
-<div>Now Showing: </div>
-<div><%= recipe.nowShowing ? 'Yes' : 'Nope' %></div>
-
-</section>
-
-<br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-action="/recipes/<%= recipe._id %>/reviews">
-<label>Review:</label>
-<textarea name="content"></textarea>
-<label>Rating:</label>
-<select name="rating">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5" selected>5</option>
-</select>
-<input type="submit" value="Add Review">
-</form>
-
-<% if (recipe.reviews.length) { %>
-<table>
-<thead>
-    <tr>
-    <th>Date</th>
-    <th>Review</th>
-    <th>Rating</th>
-    </tr>
-</thead>
-<tbody>
-    <% recipe.reviews.forEach(function(r) { %>
-    <tr>
-
-        <td><%= r.createdAt.toLocaleDateString() %></td>
-        <td><%= r.content %></td>
-        <td><%= r.rating %></td>
-    </tr>
-    <% }); %>
-</tbody>
-</table>
-<% } else { %>
-<h5>No Reviews Yet</h5>
-<% } %>
-
-<br><br><h2>Add a review</h2>
-<form id="add-review-form" method="POST"
-action="/recipes/<%= recipe._id %>/reviews">
-<select name="reviewId">
-<% availableReviews.forEach((review) => { %>
-    <option value="<%= review._id %>"><%= review.name %></option> 
-<% }); %>
-</select>
-<input type="submit" value="Add Review">
-</form>
-
-<!-- Display the cast -->
-<% if (recipe.cast.length) { %>
-<h3>Reviews</h3>
-<ul>
-<% recipe.cast.forEach((review) => { %>
-    <li><%= review.name %></li>
-<% }); %>
-</ul>
-<% } else { %>
-<h5>No Reviews Yet</h5>
-<% } %>
-
+<h1>Cuisine:<%=recipe.cuisine%></h1>
+<h2>Dish Name:<%=recipe.Dish%></h2>
+<h3>Time:<%=recipe.Time%></h3>
+<h4>Ingredents:<%=recipe.Ingredents%></h1>
+<h5>Steps:<%=recipe.Steps%></h5>
 
 <%- include('../partials/footer') %>

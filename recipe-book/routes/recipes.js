@@ -3,12 +3,13 @@ const router = express.Router();
 
 const recipesCtrl = require('../controllers/recipes');
 	
-router.get('/', recipesCtrl.index);
+router.get('/recipe', recipesCtrl.index);
 
 router.get('/new', recipesCtrl.new);
+router.post('/recipes/addRecipe', recipesCtrl.addRecipe);
 
-router.get('/:id', recipesCtrl.show);
+//router.get('/:id', recipesCtrl.show);
 
-router.post('/', recipesCtrl.create);
+
 	
 module.exports = router;

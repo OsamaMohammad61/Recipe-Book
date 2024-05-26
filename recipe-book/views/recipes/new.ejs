@@ -1,19 +1,17 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/recipes" method="POST">
-<label>Title:</label>
-<input type="text" name="title">
-<label>Release Year:</label>
-<input type="text" name="releaseYear">
-<label>MPAA Rating</label>
-<select name="mpaaRating">
-<option value="G">G</option>
-<option value="PG">PG</option>
-<option value="PG-13">PG-13</option>
-<option value="R">R</option>
-</select>
-<label>Now Showing:</label>
-<input type="checkbox" name="nowShowing" checked>
+<form id="new-form" action="/recipes/addRecipe" method="POST">
+<label>cuisine:</label>
+<input type="text" name="cuisine">
+<label>Dish</label>
+<input type="text" name="Dish">
+<label>Time</label>
+<input type="number" name="Time">
+<label>Ingredents</label>
+<input type="text" name="Ingredents">
+<label>Steps</label>
+<input type="text" name="Steps">
+
 <input type="submit" value="Add Recipe">
 </form>
 

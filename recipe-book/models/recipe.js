@@ -2,37 +2,24 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema({
-content: {
-type: String,
-required: true
-},
-rating: {
-type: Number,
-min: 1,
-max: 5,
-default: 5
-}
-}, {
-timestamps: true
-});
+
 
 const recipeSchema = new Schema({
-title: { type: String, required: true },
-releaseYear: {
-type: Number,
-default: function() {
-    return new Date().getFullYear();
+cuisine: {type: String,
+    required: true
 },
-min: 1927
+Dish: {type: String,
+    required: true
 },
-mpaaRating: {
-type: String,
-enum: ['G', 'PG', 'PG-13', 'R']
+Time: {type: Number,
+    required: true
 },
-cast: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
-nowShowing: { type: Boolean, default: true },
-reviews: [reviewSchema]
+Ingredents: {type: String,
+    required: true
+},
+Steps: {type: String,
+    required: true
+}
 }, {
 timestamps: true
 });
