@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Recipe Book</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Recipe Book</h1>
-    <p>Welcome to Recipe Book</p>
+
+
+<%- include('./partials/header')%>
+<div class="homepagr">
+  <h1>Recipe Book</h1>
+  <p>Explore the world of flavors Delectable recipes from every corner of the globe</p>
+</div>
+    
     <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-  </body>
-</html>
+
+
+    <a href="/recipes/allreviews">all Reviews</a>
+    <%- include('./partials/footer')%>

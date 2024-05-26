@@ -14,6 +14,10 @@ require('./config/passport')
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 
+const recipesRouter = require('./routes/recipes');
+
+
+var reviewRouter = require('./routes/reviews')
 var app = express()
 
 // view engine setup
@@ -38,7 +42,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/', recipesRouter);
 
+
+
+app.use('/',reviewRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))

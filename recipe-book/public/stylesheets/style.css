@@ -8,9 +8,9 @@ a {
 }
 .login {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  justify-content: right;
+  align-items: top;
+  height: 600px;
 }
 
 .login img {
