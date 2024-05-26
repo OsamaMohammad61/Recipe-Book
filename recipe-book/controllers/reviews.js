@@ -32,4 +32,6 @@ const allReviews = async (req, res) => {
   res.render('recipes/allreviews', { title: 'All Reviews', userReviews })
 }
 
+
+
 module.exports = { reviewForm, addReview, allReviews }
