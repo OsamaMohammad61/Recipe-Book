@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<h1>Cuisines</h1>
+
+<% allCusines.forEach((c) =>{%>
+
+  <p><%=c.cuisine%></p>
+  <p><%=c._id%></p>
+  <%})%>
+<%- include('../partials/footer') %>
