@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<% if (user) { %>
 <h1>Cuisine:<%=recipe.cuisine%></h1>
 <h2>Dish Name:<%=recipe.Dish%></h2>
 <h3>Time:<%=recipe.Time%></h3>
@@ -24,6 +24,7 @@
         </select>
     </label>
     <input type="submit">
+    <% } %>
 </form>
 
 
