@@ -46,4 +46,18 @@ const Onereview = async (req, res) => {
   res.render('recipes/reviewForm', { title: 'Enter Review', findIt })
 }
 
+const update = async(req, res) =>{
+  const chReview = req.params.id
+  try{
+    const editReview = await review.findById(chReview)
+
+    if (!editReview){
+      console.log("Review not found")
+      res.redirect('/new')
+    }
+    editReview.heading = req.body.heading
+    editReview.detail = req.body.detail
+    editReview.rate = req.body.rate
+  }
+}
 module.exports = { reviewForm, addReview, allReviews, Onereview }
