@@ -1,5 +1,6 @@
 const Recipe = require('../models/recipe')
 const Review = require('../models/review')
+const User = require('../models/user')
 
 module.exports = {
   index,
@@ -7,7 +8,8 @@ module.exports = {
   new: newRecipe,
   addRecipe,
   showCuisines,
-  showAllRecipes
+  showAllRecipes,
+  delete: deleteRecipe
 }
 
 async function index(req, res) {
@@ -16,7 +18,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const recipe = await Recipe.findById(req.params.id)
+  const recipe = await Recipe.findById(req.params.id).populate('reviewon')
 
   res.render('recipes/show', { title: 'Recipe Detail', recipe })
 }
@@ -34,6 +36,11 @@ async function addRecipe(req, res) {
     recipe.doneBY.push(person)
     await recipe.save()
 
+    const getUser = await User.findById(person)
+    if (getUser) {
+      getUser.recipeadd.push(recipe._id)
+      await getUser.save()
+    }
     res.render('recipes/show', { title: 'Add Recipe', recipe })
   } catch (err) {
     console.log(err)
@@ -48,7 +55,7 @@ async function showAllRecipes(req, res) {
     let allRecipes = await Recipe.find({ cuisine: getCuisine.cuisine })
     res.render('recipes/allrecipes', { title: 'All Recipes', allRecipes })
   } catch (err) {
-    console.error(error)
+    console.error(err) // Corrected error logging
   }
 }
 
@@ -71,5 +78,33 @@ async function showCuisines(req, res) {
     res.render('recipes/cuisines', { title: 'All Cuisines', filteredRecipes })
   } catch (error) {
     console.error(error)
+  }
+}
+
+async function deleteRecipe(req, res) {
+  let recipeID = req.params.id
+  // Note the cool "dot" syntax to query on the property of a subdoc
+  const recipe = await Recipe.find({})
+  // Rogue user!
+  if (!recipe) return res.render('recipes/index', { title: 'All Recipes' })
+  // Remove the review using the remove method available on Mongoose arrays
+  recipe.forEach((r) => {
+    if (r._id === recipeID) {
+      r.remove()
+    }
+  })
+  recipe.remove()
+  // Save the updated movie doc
+  await recipe.save()
+  // Redirect back to the movie's show view
+  res.render('recipes/index', { title: 'All Recipes' })
+}
+
+async function deleteRecipe(req, res) {
+  try {
+    const getRecipe = await Recipe.findByIdAndDelete(req.params.id)
+    res.redirect('/cuisines')
+  } catch (err) {
+    console.error(err)
   }
 }
