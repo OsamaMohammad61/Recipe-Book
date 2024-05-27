@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 
 const recipesRouter = require('./routes/recipes');
+const cuisinesRouter = require('./routes/cuisines');
 
 
 var reviewRouter = require('./routes/reviews')
@@ -43,6 +44,7 @@ app.use(passport.session())
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/', recipesRouter);
+app.use('/cuisines', cuisinesRouter)
 
 
 
