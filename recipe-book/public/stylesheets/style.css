@@ -3,32 +3,61 @@ body {
   margin: 0;
   padding: 0;
 }
+footer{
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+   background-color: #F3F6EF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    height: max-content;
+    
+  }
+
+#p1{
+  position: center;
 }
-
-nav {
-  background-color: #333;
-  padding: 10px 20px;
+header {
+  background-color:#F3F6EF;
+  color: #183ccc;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px; 
+}
+#nabbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; /* يمكن تعديل هذه القيمة حسب الحاجة */
+  
+}
+#link{
+margin-left: 250px;
+}
+nav {
+  background-color:#F3F6EF;
+  padding: 10px 20px;
+  display: flex;
+
 }
 
-nav ul {
+ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+  margin-left: 20px;
+position: center;
+
 }
 
 nav ul li a {
   margin-right: 20px;
-  color: #fff;
-  text-decoration: none;
+  color: #0b2949;
+  text-align: center;
 }
 
 .login {
@@ -54,15 +83,25 @@ nav ul li a {
   background-color: #f1f1f1;
 }
 
-.homepage h1 {
+/*.homepage h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
-
+*/
 .homepage p {
   font-size: 18px;
   margin-bottom: 40px;
 }
+#login{
+
+    position: fixed; 
+
+    right: 0; 
+    margin: 20px; 
+    padding: 0; 
+    list-style: none; 
+  }
+  
 
 a[href='/recipes/allreviews'] {
   display: block;
@@ -70,15 +109,78 @@ a[href='/recipes/allreviews'] {
   margin-top: 20px;
   color: #333;
   text-decoration: none;
+ 
 }
 
-footer {
-  background-color: #333;
+/*footer {
+
   color: #fff;
   padding: 10px 0;
   text-align: center;
 }
-
+*/
 footer p {
   margin: 0;
+  text-align: center;
 }
+#login{
+  position: right;
+}
+h1{
+  position: absolute;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+header, footer {
+  background-color: #F3F6EF; 
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex: 1; 
+}
+
+.split {
+  flex: 1; 
+  padding: 20px;
+  overflow: auto;
+}
+
+.left {
+  background-color:#0b2949; 
+}
+
+.right {
+  background-image: url('/recipe-book/public/img/images\ \(8\).jpg');
+  background-size: cover; /* This ensures that the background image covers the entire .right section */
+  background-position: center; /* This centers the background image */
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+#p1{
+  color: #111;
+}
+
