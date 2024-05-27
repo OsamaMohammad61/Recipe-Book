@@ -6,7 +6,8 @@ module.exports = {
   show,
   new: newRecipe,
   addRecipe,
-  showCuisines,showAllRecipes
+  showCuisines,
+  showAllRecipes
 }
 
 async function index(req, res) {
@@ -14,13 +15,10 @@ async function index(req, res) {
   res.render('recipes/index', { title: 'All Recipes' })
 }
 
-
 async function show(req, res) {
-   
   const recipe = await Recipe.findById(req.params.id)
-  console.log(recipe)
 
-res.render('recipes/show', { title: 'Recipe Detail', recipe });
+  res.render('recipes/show', { title: 'Recipe Detail', recipe })
 }
 
 function newRecipe(req, res) {
@@ -44,13 +42,11 @@ async function addRecipe(req, res) {
 }
 
 async function showAllRecipes(req, res) {
-  let getcuisine = req.params.id
-
+  let getID = req.params.id
   try {
-    let tempObj = await Recipe.findById(getcuisine)
-    let allRecipes = await Recipe.find({cuisine: tempObj.cuisine})
-    console.log(allRecipes)
-    res.render('recipes/allrecipes', {title: "All Recipes",allRecipes })
+    let getCuisine = await Recipe.findById(getID)
+    let allRecipes = await Recipe.find({ cuisine: getCuisine.cuisine })
+    res.render('recipes/allrecipes', { title: 'All Recipes', allRecipes })
   } catch (err) {
     console.error(error)
   }
@@ -59,7 +55,6 @@ async function showAllRecipes(req, res) {
 async function showCuisines(req, res) {
   try {
     let allCusines = await Recipe.find({})
-    
     const filteredRecipes = allCusines.reduce((uniqueCuisines, recipe) => {
       const cuisine = recipe.cuisine
       const existingCuisine = uniqueCuisines.find(
@@ -67,15 +62,14 @@ async function showCuisines(req, res) {
       )
 
       if (!existingCuisine) {
-        uniqueCuisines.push({ cuisines: recipe.cuisine, id: recipe._id })
-
+        uniqueCuisines.push({ cuisine: recipe.cuisine, id: recipe._id })
       }
+
       return uniqueCuisines
     }, [])
-    console.log(allCusines)
+
     res.render('recipes/cuisines', { title: 'All Cuisines', filteredRecipes })
   } catch (error) {
     console.error(error)
   }
 }
-
