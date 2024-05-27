@@ -1,18 +1,15 @@
-/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Header Styles */
 header {
   background-color: #333;
   color: #fff;
   padding: 20px;
 }
 
-/* Navbar Styles */
 nav {
   background-color: #333;
   padding: 10px 20px;
@@ -34,7 +31,6 @@ nav ul li a {
   text-decoration: none;
 }
 
-/* Login Button Styles */
 .login {
   display: inline-block;
   background-color: #0b2949;
@@ -52,7 +48,6 @@ nav ul li a {
   margin-left: 10px;
 }
 
-/* Homepage Styles */
 .homepage {
   text-align: center;
   padding: 50px 0;
@@ -69,7 +64,6 @@ nav ul li a {
   margin-bottom: 40px;
 }
 
-/* All Reviews Link Styles */
 a[href='/recipes/allreviews'] {
   display: block;
   text-align: center;
@@ -78,7 +72,6 @@ a[href='/recipes/allreviews'] {
   text-decoration: none;
 }
 
-/* Footer Styles */
 footer {
   background-color: #333;
   color: #fff;
