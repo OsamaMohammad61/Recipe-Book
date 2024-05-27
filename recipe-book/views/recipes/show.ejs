@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<h1>Cuisine:<%=recipe.cuisine%></h1>
+<h2>Dish Name:<%=recipe.Dish%></h2>
+<h3>Time:<%=recipe.Time%></h3>
+<h4>Ingredents:<%=recipe.Ingredents%></h1>
+<h5>Steps:<%=recipe.Steps%></h5>
+
+
+<form action="/recipe/<%recipe._id%>/addReview" method="POST">
+    <label> Enter the title of Review <br>
+    <input type="text" name="heading" placeholder="Title">
+    </label><br>
+    <label> Write the Review <br> 
+        <input type="text" name="detail" placeholder="eview">
+    </label><br>
+    <label> Rate it <br>
+        <select name="rate">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </label>
+    <input type="submit">
+</form>
+
+
+<%- include('../partials/footer') %>
