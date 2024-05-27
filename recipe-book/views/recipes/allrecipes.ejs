@@ -1,12 +1,11 @@
-<%- include("../partials/header")%>
+<%- include("../partials/header") %>
 
-<% allRecipes.forEach((r)=>{%>
-    <%=r.Dish%>
-    <a href="/recipes/<%=r._id%>">Recipe</a>
-    
-<%})%>
+<% cuisine.recipes.forEach((r) => { %>
+    <h1>Cuisine:<%=r.cuisine%></h1>
+<h2>Dish Name:<%=r.Dish%></h2>
+<h3>Time:<%=r.Time%></h3>
+<h4>Ingredents:<%=r.Ingredents%></h1>
+<h5>Steps:<%=r.Steps%></h5>
+<% }) %>
 
-
-
-
-<%- include('../partials/footer')%>
+<%- include("../partials/footer") %>
