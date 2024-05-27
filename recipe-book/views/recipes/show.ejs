@@ -27,4 +27,10 @@
 </form>
 
 
-<%- include('../partials/footer') %>
+<!-- Deleting -->
+
+<form action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
+    <button type="submit">X</button>
+</form>
+
+<%- include('../partials/footer') %> 

@@ -7,7 +7,9 @@ module.exports = {
   new: newRecipe,
   addRecipe,
   showCuisines,
-  showAllRecipes
+ showAllRecipes,
+ delete: deleteRecipe
+
 }
 
 async function index(req, res) {
@@ -16,6 +18,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
+  console.log('Show...')
   const recipe = await Recipe.findById(req.params.id)
 
   res.render('recipes/show', { title: 'Recipe Detail', recipe })
@@ -42,6 +45,7 @@ async function addRecipe(req, res) {
 }
 
 async function showAllRecipes(req, res) {
+  console.log('Show all recipes')
   let getID = req.params.id
   try {
     let getCuisine = await Recipe.findById(getID)
@@ -72,4 +76,24 @@ async function showCuisines(req, res) {
   } catch (error) {
     console.error(error)
   }
+}
+
+async function deleteRecipe(req, res) {
+  console.log('Delete...')
+  let recipeID = req.params.id
+  // Note the cool "dot" syntax to query on the property of a subdoc
+  console.log(recipeID)
+  const recipe = await Recipe.findByIdAndDelete(recipeID)
+  // if (!recipe) return res.render('recipes/index', { title: 'All Recipes' })
+  // Remove the review using the remove method available on Mongoose arrays
+  // recipe.forEach((r) => {
+  //   if (r._id === recipeID) {
+  //     r.remove()
+  //   }
+  // })
+  // recipe.remove()
+  // Save the updated movie doc
+  // await recipe.save()
+  // Redirect back to the movie's show view
+   res.render('recipes/index', { title: 'All Recipes' })
 }
