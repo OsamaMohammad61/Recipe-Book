@@ -1,5 +1,5 @@
 const User = require('../models/user')
-const review = require('../models/review')
+const Review = require('../models/review')
 const Recipe = require('../models/recipe')
 
 const reviewForm = (req, res) => {

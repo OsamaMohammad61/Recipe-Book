@@ -17,11 +17,11 @@ const reviewSchema = new schema(
       required: true
     },
     username: [{ type: schema.Types.ObjectId, ref: 'User' }],
-    recipeID: [{ type: schema.Types.ObjectId, ref: 'recipe' }]
+    recipeID: [{ type: schema.Types.ObjectId, ref: 'Recipe' }]
   },
   {
     timestamps: true
   }
 )
 
-module.exports = mongoose.model('review', reviewSchema)
+module.exports = mongoose.model('Review', reviewSchema)

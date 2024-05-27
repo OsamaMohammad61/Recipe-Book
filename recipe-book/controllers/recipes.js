@@ -9,7 +9,9 @@ module.exports = {
   addRecipe,
   showCuisines,
   showAllRecipes,
-  delete: deleteRecipe
+  delete: deleteRecipe,
+  edit: editRecipe,
+  update
 }
 
 async function index(req, res) {
@@ -23,7 +25,7 @@ async function show(req, res) {
   res.render('recipes/show', { title: 'Recipe Detail', recipe })
 }
 
-function newRecipe(req, res) {
+async function newRecipe(req, res) {
   // We'll want to be able to render an
   // errorMsg if the create action fails
   res.render('recipes/new', { title: 'Add Recipe' })
@@ -94,9 +96,9 @@ async function deleteRecipe(req, res) {
     }
   })
   recipe.remove()
-  // Save the updated movie doc
+  // Save the updated recipes doc
   await recipe.save()
-  // Redirect back to the movie's show view
+  // Redirect back to the recipes's show view
   res.render('recipes/index', { title: 'All Recipes' })
 }
 
@@ -107,4 +109,19 @@ async function deleteRecipe(req, res) {
   } catch (err) {
     console.error(err)
   }
+}
+async function editRecipe(req, res) {
+  console.log(req.params.id)
+  const recipe = await Recipe.findById(req.params.id)
+  console.log(recipe)
+  res.render('recipes/edit', {
+    recipe
+  })
+}
+async function update(req, res) {
+  const recipetId = req.params.id
+  const updatedrecipe = req.body
+  console.log(updatedrecipe)
+  await Recipe.findByIdAndUpdate(recipetId, updatedrecipe)
+  res.redirect(`/recipes/${recipetId}`)
 }
