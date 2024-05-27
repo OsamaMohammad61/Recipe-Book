@@ -1,12 +1,15 @@
 const User = require('../models/user')
 const review = require('../models/review')
+const Recipe = require('../models/recipe')
 
 const reviewForm = (req, res) => {
-  res.render('recipes/reviewForm', { title: 'Review Form' })
+  res.render('recipes/reviewForm', { title: 'Enter Review' })
 }
 const addReview = async (req, res) => {
   try {
     let byUser = req.user._id
+    let reviewOn = req.params.id
+    console.log(reviewOn)
     console.log(req.body)
     const newreview = new review(req.body)
     newreview.username = byUser
@@ -17,10 +20,16 @@ const addReview = async (req, res) => {
       getuser.reviews.push(newreview._id)
       await getuser.save()
     }
+    const getrecipe = await Recipe.findById(reviewOn)
+    if (getrecipe) {
+      getrecipe.reviewon.push(newreview._id)
+      await getrecipe.save()
+    }
     console.log(getuser)
     console.log(newreview)
+    console.log(getrecipe)
 
-    res.render('recipes/reviewForm', { title: 'Review Forem' })
+    res.redirect(`/recipes/${getrecipe._id}`)
   } catch (err) {
     console.error('Pls log in')
   }
@@ -32,6 +41,9 @@ const allReviews = async (req, res) => {
   res.render('recipes/allreviews', { title: 'All Reviews', userReviews })
 }
 
+const Onereview = async (req, res) => {
+  const findIt = await review.findById(req.params.id)
+  res.render('recipes/reviewForm', { title: 'Enter Review', findIt })
+}
 
-
-module.exports = { reviewForm, addReview, allReviews }
+module.exports = { reviewForm, addReview, allReviews, Onereview }
