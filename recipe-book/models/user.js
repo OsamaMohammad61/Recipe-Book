@@ -10,7 +10,8 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
-    reviews:[{type:Schema.Types.ObjectId, ref: "review"}]
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
+    recipeadd: [{ type: Schema.Types.ObjectId, ref: 'Recipe' }]
   },
   {
     timestamps: true
