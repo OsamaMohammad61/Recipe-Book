@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 
+
 <h1>Cuisine:<%=recipe.cuisine%></h1>
 <h2>Dish Name:<%=recipe.Dish%></h2>
 <h3>Time:<%=recipe.Time%></h3>
 <h4>Ingredents:<%=recipe.Ingredents%></h1>
 <h5>Steps:<%=recipe.Steps%></h5>
 
-<br><br><h2>Reviews</h2>
-<% if (user) { %>
+
 <form action="/recipe/<%=recipe._id%>/addReview" method="POST">
     <label> Enter the title of Review <br>
     <input type="text" name="heading" placeholder="Title">
@@ -25,7 +25,7 @@
         </select>
     </label>
     <input type="submit">
-    <% } %>
+
 </form>
 <form action="/recipe/<%=recipe._id%>?_method=DELETE" method="POST">
   <button type="submit">Delete Recipe</button></form>
