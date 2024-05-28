@@ -1,18 +1,32 @@
 <%- include('../partials/header') %>
+<link rel='stylesheet' href='../../public/stylesheets/style.css' />
 
+<div id="form-div">
 <form id="new-form" action="/recipes/addRecipe" method="POST">
-<label>cuisine:</label>
-<input type="text" name="cuisine">
-<label>Dish</label>
-<input type="text" name="Dish">
-<label>Time</label>
-<input type="number" name="Time">
-<label>Ingredents</label>
-<input type="text" name="Ingredents">
-<label>Steps</label>
-<input type="text" name="Steps">
-
-<input type="submit" value="Add Recipe">
+    <div class="form-group">
+        <label for="cuisine">Cuisine:</label>
+        <input type="text" id="cuisine" name="cuisine">
+    </div>
+    <div class="form-group">
+        <label for="dish">Dish:</label>
+        <input type="text" id="dish" name="Dish">
+    </div>
+    <div class="form-group">
+        <label for="time">Time:</label>
+        <input type="number" id="time" name="Time">
+    </div>
+    <div class="form-group">
+        <label for="ingredients">Ingredients:</label>
+        <input type="text" id="ingredients" name="Ingredents">
+    </div>
+    <div class="form-group">
+        <label for="steps">Steps:</label>
+        <input type="text" id="steps" name="Steps">
+    </div>
+  
+        <input type="submit" value="Add Recipe" class="login">
+    
 </form>
+</div>
 
 <%- include('../partials/footer') %>
