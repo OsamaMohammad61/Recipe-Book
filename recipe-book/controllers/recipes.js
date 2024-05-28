@@ -1,8 +1,8 @@
 
-const Recipe = require('../models/recipe')
-const Review = require('../models/review')
 const User = require('../models/user')
-const recipeController = require('../controllers/recipe');
+const Review = require('../models/review')
+const Recipe = require('../models/recipe')
+
 
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
   showCuisines,
   showAllRecipes,
   delete: deleteRecipe,
-  update
+  //update
 }
 
 
@@ -37,7 +37,7 @@ async function newRecipe(req, res) {
 async function addRecipe(req, res) {
   let person = req.user._id
   try {
-    const recipe = await new Recipe(req.body)
+    const recipe = new Recipe(req.body)
     recipe.doneBY.push(person)
     await recipe.save()
 

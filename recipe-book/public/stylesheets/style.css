@@ -31,16 +31,19 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px; /* يمكن تعديل هذه القيمة حسب الحاجة */
+  padding: 20px; 
   
 }
-#link{
-margin-left: 250px;
-}
+
 nav {
   background-color:#F3F6EF;
   padding: 10px 20px;
   display: flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px; 
+  padding-right: 10px; 
 
 }
 
@@ -141,6 +144,8 @@ body {
   height: 100vh;
   font-family: Arial, sans-serif;
   color: white;
+  font-family: blue;
+ color: blue;
 }
 
 header, footer {
@@ -166,8 +171,8 @@ header, footer {
 
 .right {
   background-image: url('/recipe-book/public/img/images\ \(8\).jpg');
-  background-size: cover; /* This ensures that the background image covers the entire .right section */
-  background-position: center; /* This centers the background image */
+  background-size: cover; 
+  background-position: center;
 }
 
 .centered {
@@ -180,11 +185,26 @@ header, footer {
 }
 
 .centered img {
-  width: 150px;
-  border-radius: 50%;
+  width: 400px;
+
   margin-bottom: 20px;
 }
 #p1{
   color: #111;
 }
+#logout{
+  position: absolute;
+  right: 10px; /* يمكنك تعديل المسافة حسب الحاجة */
+  top: 10px;  /* يمكنك تعديل المسافة حسب الحاجة */
+}
+h1{
+  color: #0b2949;
+}
+h2{
+  color: #0b2949;
+  text-align: center;
+}
+#showdetail{
+width: 500px;
 
+}

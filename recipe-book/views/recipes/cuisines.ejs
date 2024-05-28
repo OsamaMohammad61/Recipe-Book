@@ -1,10 +1,19 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
 <%- include('../partials/header') %>
+<body>
+  <h2>Cuisines</h2>
 
-<h1>Cuisines</h1>
+
 
 <% filteredRecipes.forEach((c) =>{%>
-
+  <center>
+    <div id="showdetail">
   <p><%=c.cuisine%></p>
+  <button class="login">
   <a href="/recipe/<%=c.id%>">show detail</a>
+  <br>
   <%})%>
+</button>
+</div></center>
+</body>
 <%- include('../partials/footer') %>
