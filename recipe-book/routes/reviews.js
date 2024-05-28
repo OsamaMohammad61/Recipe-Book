@@ -5,6 +5,9 @@ const reviewCtrl = require('../controllers/reviews')
 router.get('/recipe/review', reviewCtrl.reviewForm)
 router.post('/recipe/:id/addReview', reviewCtrl.addReview)
 router.get('/recipes/allreviews', reviewCtrl.allReviews)
-router.get('/review/:id', reviewCtrl.Onereview)
-//router.post('/edit/:id', reviewCtrl.edit)
+router.post('/review/:id', reviewCtrl.Onereview)
+router.post('/update/:id/review', reviewCtrl.update)
+router.get('/edit/:id', reviewCtrl.edit)
+router.delete('/deleteit/:id', reviewCtrl.delete)
+
 module.exports = router

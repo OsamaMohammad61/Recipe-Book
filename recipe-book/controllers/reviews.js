@@ -51,25 +51,48 @@ const allReviews = async (req, res) => {
 }
 
 const Onereview = async (req, res) => {
+  const hiddenID = req.body.recipeId
+
   const findIt = await Review.findById(req.params.id)
-  res.render('recipes/reviewForm', { title: 'Enter Review', findIt })
+  res.render('recipes/reviewForm', { title: 'Enter Review', findIt, hiddenID })
 }
-/*
+
 const update = async (req, res) => {
   const chReview = req.params.id
+  const updatedReview = req.body
   try {
-    const editReview = await review.findById(chReview)
+    const editReview = await Review.findByIdAndUpdate(chReview, updatedReview)
 
     if (!editReview) {
       console.log('Review not found')
-      res.redirect('/new')
     }
-    editReview.heading = req.body.heading
-    editReview.detail = req.body.detail
-    editReview.rate = req.body.rate
+    res.redirect(`/review/${chReview}`)
   } catch (err) {
     console.error(err)
   }
 }
-*/
-module.exports = { reviewForm, addReview, allReviews, Onereview }
+const edit = async (req, res) => {
+  const getReview = await Review.findById(req.params.id)
+  console.log(getReview)
+  res.render('recipes/editReviews', { title: 'Edit Review', getReview })
+}
+const deleteReview = async (req, res) => {
+  try {
+    gotIt = req.body.repass
+    console.log(req.body.repass)
+    const deletethis = await Review.findByIdAndDelete(req.params.id)
+
+    res.redirect(`/recipes/${gotIt}`)
+  } catch (err) {
+    console.error(err)
+  }
+}
+module.exports = {
+  reviewForm,
+  addReview,
+  allReviews,
+  Onereview,
+  update,
+  edit,
+  delete: deleteReview
+}
