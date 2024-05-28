@@ -120,11 +120,15 @@ a[href='/recipes/allreviews'] {
 }
 */
 footer p {
+
   margin: 0;
   text-align: center;
 }
 #login{
   position: right;
+
+  margin: 100px;
+
 }
 h1{
   position: absolute;

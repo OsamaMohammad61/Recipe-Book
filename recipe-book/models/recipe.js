@@ -1,4 +1,5 @@
 //const cuisines = require('../public/routes/cuisines.js');
+const recipeContl = require('../controllers/recipe.js');
 
 const mongoose = require('mongoose')
 
@@ -11,7 +12,8 @@ const recipeSchema = new Schema(
     Time: { type: Number, required: true },
     Ingredents: { type: String, required: true },
     Steps: { type: String, required: true },
-    doneBY: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    doneBY: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    reviewon: [{ type: Schema.Types.ObjectId, ref: 'Review' }]
   },
   {
     timestamps: true

@@ -1,21 +1,6 @@
 <%- include("../partials/header")%>
 
-<form action="/recipe/addReview" method="POST">
-    <label> Enter the title of Review <br>
-    <input type="text" name="heading" placeholder="Title">
-    </label><br>
-    <label> Write the Review <br> 
-        <input type="text" name="detail" placeholder="eview">
-    </label><br>
-    <label> Rate it <br>
-        <select name="rate">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </label>
-    <input type="submit">
-</form>
+<h1>Heading:<%=findIt.heading%></h1>
+<h2>Detail:<%=findIt.detail%></h2>
+<h3>Rate:<%=findIt.rate%></h3>
 <%- include("../partials/footer")%>
