@@ -10,6 +10,7 @@ const recipeSchema = new Schema(
     Ingredents: { type: String, required: true },
     Steps: { type: String, required: true },
     doneBY: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    
   },
   {
     timestamps: true
