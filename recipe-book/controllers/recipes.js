@@ -20,9 +20,13 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const recipe = await Recipe.findById(req.params.id).populate('reviewon')
-
-  res.render('recipes/show', { title: 'Recipe Detail', recipe })
+  try {
+    const recipe = await Recipe.findById(req.params.id)
+    res.render('recipes/show', { recipe, user: req.user }) // Pass the user variable
+  } catch (err) {
+    console.error(err)
+    res.redirect('/recipes')
+  }
 }
 
 async function newRecipe(req, res) {

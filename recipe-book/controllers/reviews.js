@@ -10,9 +10,10 @@ const addReview = async (req, res) => {
     let byUser = req.user._id
     let reviewOn = req.params.id
     console.log(reviewOn)
-    console.log(req.body)
-    const newreview = new review(req.body)
+
+    const newreview = new Review(req.body)
     newreview.username = byUser
+    newreview.recipeID.push(reviewOn)
     await newreview.save()
 
     const getuser = await User.findById(byUser)
@@ -42,8 +43,20 @@ const allReviews = async (req, res) => {
 }
 
 const Onereview = async (req, res) => {
-  const findIt = await review.findById(req.params.id)
-  res.render('recipes/reviewForm', { title: 'Enter Review', findIt })
+  //   const findIt = await Review.findById(req.params.id)
+  //   res.render('recipes/reviewForm', { title: 'Enter Review', findIt })
+  // }
+
+  try {
+    const findIt = await Review.findById(req.params.id)
+    if (!findIt) {
+      return res.status(404).send('Review not found')
+    }
+    res.render('recipes/reviewForm', { findIt })
+  } catch (err) {
+    console.error(err)
+    res.redirect('/recipes')
+  }
 }
 
 module.exports = { reviewForm, addReview, allReviews, Onereview }

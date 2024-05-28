@@ -7,7 +7,7 @@
 <h5>Steps:<%=recipe.Steps%></h5>
 
 <br><br><h2>Reviews</h2>
-<% if (user) { %>
+
 <form action="/recipe/<%=recipe._id%>/addReview" method="POST">
     <label> Enter the title of Review <br>
     <input type="text" name="heading" placeholder="Title">
@@ -25,14 +25,14 @@
         </select>
     </label>
     <input type="submit">
-    <% } %>
+
 </form>
 <form action="/recipe/<%=recipe._id%>?_method=DELETE" method="POST">
   <button type="submit">Delete Recipe</button></form>
 <%recipe.reviewon.forEach((re)=>{%>
   <%=re.heading%>
   <%=re.rate%>
-  <a href="/review/<%= re._id %>">Details</a>
+  <a href="/review/<%= recipe._id %>">Details</a>
   <%})%>
 
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
