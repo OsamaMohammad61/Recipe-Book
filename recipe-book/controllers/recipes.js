@@ -1,6 +1,6 @@
 const Recipe = require('../models/recipe');
 const Review = require('../models/review');
-const Cuisines = require('../models/cuisines');
+
 
 async function index(req, res) {
     try {
@@ -69,6 +69,6 @@ module.exports = {
     index,
     new: newRecipe,
     addRecipe,
-    getAllRecipes,
-    cuisines // Ensure this is correctly exported
+    showAllRecipes:getAllRecipes,
+    //cuisines // Ensure this is correctly exported
 };

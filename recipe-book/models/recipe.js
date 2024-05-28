@@ -1,3 +1,5 @@
+//const cuisines = require('../public/routes/cuisines.js');
+
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
