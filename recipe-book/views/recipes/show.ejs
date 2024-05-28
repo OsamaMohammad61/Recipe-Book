@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<% if (user) { %>
 <h1>Cuisine:<%=recipe.cuisine%></h1>
 <h2>Dish Name:<%=recipe.Dish%></h2>
 <h3>Time:<%=recipe.Time%></h3>
@@ -7,7 +7,7 @@
 <h5>Steps:<%=recipe.Steps%></h5>
 
 
-<form action="/recipe/<%recipe._id%>/addReview" method="POST">
+<form action="/recipe/<%=recipe._id%>/addReview" method="POST">
     <label> Enter the title of Review <br>
     <input type="text" name="heading" placeholder="Title">
     </label><br>
@@ -24,7 +24,16 @@
         </select>
     </label>
     <input type="submit">
+    <% } %>
 </form>
+<form action="/recipe/<%=recipe._id%>?_method=DELETE" method="POST">
+  <button type="submit">Delete Recipe</button></form>
+<%recipe.reviewon.forEach((re)=>{%>
+  <%=re.heading%>
+  <%=re.rate%>
+  <a href="/review/<%= re._id %>">Details</a>
+  <%})%>
 
-
+  <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+  
 <%- include('../partials/footer') %>
