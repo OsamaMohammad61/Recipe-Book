@@ -20,7 +20,7 @@ const addReview = async (req, res) => {
     console.log(getuser)
     console.log(newreview)
 
-    res.render('recipes/reviewForm', { title: 'Review Forem' })
+    res.redirect(`/recipes/${req.params.id}`, { title: 'Review Forem' })
   } catch (err) {
     console.error('Pls log in')
   }

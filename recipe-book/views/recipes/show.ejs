@@ -7,7 +7,7 @@
 <h5>Steps:<%=recipe.Steps%></h5>
 
 
-<form action="/recipe/<%recipe._id%>/addReview" method="POST">
+<form action="/recipe/<%=recipe._id%>/addReview" method="POST">
     <label> Enter the title of Review <br>
     <input type="text" name="heading" placeholder="Title">
     </label><br>
