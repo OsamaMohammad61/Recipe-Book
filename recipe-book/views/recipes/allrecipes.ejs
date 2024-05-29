@@ -1,10 +1,11 @@
 <%- include('../partials/header') %>
+<div class="center">
 
 <h1>Recipes</h1>
-
 <% allRecipes.forEach((c) =>{%>
 
-  <a href="/recipes/<%=c._id%>">  <p><%=c.Dish%></p>
-  </a>
-  <%})%>
+<a href="/recipes/<%=c._id%>">  <p><%=c.Dish%></p>
+</a>
+<%})%>
+</div>
 <%- include('../partials/footer') %>
