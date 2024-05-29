@@ -38,7 +38,7 @@ async function newRecipe(req, res) {
 async function addRecipe(req, res) {
   let person = req.user._id
   try {
-    const recipe = await new Recipe(req.body)
+    const recipe = new Recipe(req.body)
     recipe.doneBY.push(person)
     await recipe.save()
 

@@ -9,26 +9,37 @@ const addReview = async (req, res) => {
   try {
     let byUser = req.user._id
     let reviewOn = req.params.id
-    console.log(reviewOn)
 
+    console.log('reviewOn', reviewOn)
+    console.log('req.body', JSON.stringify(req.body, null, 2))
+    console.log('byUser', byUser)
     const newreview = new Review(req.body)
+    console.log('new review done')
+
     newreview.username = byUser
     newreview.recipeID.push(reviewOn)
     await newreview.save()
-
+    console.log(`Fetching user ${byUser}`)
     const getuser = await User.findById(byUser)
+    console.log(`Done Fetching user ${getuser}`)
     if (getuser) {
+      console.log('inside getuser')
+
       getuser.reviews.push(newreview._id)
+      console.log('after push')
+
       await getuser.save()
+      console.log('after save')
     }
     const getrecipe = await Recipe.findById(reviewOn)
+    console.log('getrecipe', getrecipe)
+
     if (getrecipe) {
       getrecipe.reviewon.push(newreview._id)
+      console.log('reviewon push')
       await getrecipe.save()
+      console.log('after save')
     }
-    console.log(getuser)
-    console.log(newreview)
-    console.log(getrecipe)
 
     res.redirect(`/recipes/${getrecipe._id}`)
   } catch (err) {
@@ -58,5 +69,22 @@ const Onereview = async (req, res) => {
     res.redirect('/recipes')
   }
 }
+/*
+const update = async (req, res) => {
+  const chReview = req.params.id
+  try {
+    const editReview = await review.findById(chReview)
 
+    if (!editReview) {
+      console.log('Review not found')
+      res.redirect('/new')
+    }
+    editReview.heading = req.body.heading
+    editReview.detail = req.body.detail
+    editReview.rate = req.body.rate
+  } catch (err) {
+    console.error(err)
+  }
+}
+*/
 module.exports = { reviewForm, addReview, allReviews, Onereview }

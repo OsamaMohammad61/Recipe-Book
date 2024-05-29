@@ -1,34 +1,39 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #ebeff5;
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: #f3f6ef;
   padding: 20px;
-}
-
-nav {
-  background-color: #333;
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
-
+nav {
+  background-color: #f3f6ef;
+  padding: 10px 20px;
+  display: flex;
+}
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+  margin-left: 20px;
+  position: center;
 }
 
 nav ul li a {
   margin-right: 20px;
-  color: #fff;
-  text-decoration: none;
+  color: #0b2949;
+  text-align: center;
 }
 
 .login {
@@ -37,8 +42,6 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
 .login img {
@@ -52,11 +55,7 @@ nav ul li a {
   text-align: center;
   padding: 50px 0;
   background-color: #f1f1f1;
-}
-
-.homepage h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  color: #0b2949;
 }
 
 .homepage p {
@@ -64,21 +63,45 @@ nav ul li a {
   margin-bottom: 40px;
 }
 
-a[href='/recipes/allreviews'] {
-  display: block;
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.split {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.left {
+  background-color: #0b2949;
+}
+
+.right {
+  background-image: url('/recipe-book/public/img/images\ \(8\).jpg');
+  background-size: cover; /* This ensures that the background image covers the entire .right section */
+  background-position: center; /* This centers the background image */
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   text-align: center;
-  margin-top: 20px;
-  color: #333;
-  text-decoration: none;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-
-footer p {
-  margin: 100px;
+  background-color: #f3f6ef;
+  padding: 20px;
+  display: flex;
+  color: #0b2949;
 }
