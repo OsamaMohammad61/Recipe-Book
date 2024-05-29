@@ -4,24 +4,23 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 
 </head>
-  <nav class="nav">
-        <a  href="/">Home</a>
-        <a href="/cuisines">Cuisine</a>
-        <a href="/showAll/recipes">Recipes</a>
-      
-        <a href="/new">Add Recipes</a>
-    
-        <a href="/reviews/allreviews">all Reviews</a>
 
-        <a href="/logout">LOG OUT</a>
-    
-    <div class="login">
-      <a href="/auth/google" >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    </div> 
-
-      </nav>
-      <body>   
-
-
+<body>   
+  <nav class="nav"></nav>
+  <ul>
+    <li><a  href="/">Home</a></li>
+    <li><a href="/cuisines">Cuisine</a></li>
+    <li><a href="/showAll/recipes">Recipes</a></li>
+    <% if (user) { %>
+    <li><a href="/new">Add Recipes</a></li>
+    <li><a href="/reviews/allreviews">all Reviews</a></li>
+    <li style="float:right"><a href="/logout">LOG OUT</a></li>
+    <% } else { %>
+    <li style="float:right">  <a href="/auth/google" class="login">LOG IN&nbsp;</a></li>
+    <% } %>
+  </ul>
+ 
+  </nav>
 </body>
 </html>
+

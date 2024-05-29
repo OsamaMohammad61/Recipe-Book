@@ -10,6 +10,8 @@
 <h5>Steps:<%=recipe.Steps%></h5>
 
 
+<br><br><h2>Reviews</h2>
+<% if (user) { %>
 <form action="/recipe/<%=recipe._id%>/addReview" method="POST">
     <label> Enter the title of Review <br>
     <input type="text" name="heading" placeholder="Title">
@@ -34,12 +36,17 @@
 <%recipe.reviewon.forEach((re)=>{%>
   <%=re.heading%>
   <%=re.rate%>
+
    <form action="/review/<%= re._id %>" method="POST">
     <input type="hidden" name="recipeId" value="<%= recipe._id %>">
     <button>Details</button>
   </form>
-  <%})%>
+
 
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+
+  <%})%>
+
 </div>
+
 <%- include('../partials/footer') %>
