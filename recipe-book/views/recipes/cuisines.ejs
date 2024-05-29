@@ -1,7 +1,0 @@
-<%- include('../partials/header') %>
-<h1>Cuisines</h1>
-<% filteredRecipes.forEach((c) =>{%>
-  <a href="/recipe/<%=c.id%>">  <p><%=c.cuisine%></p>
-  </a>
-  <%})%>
-<%- include('../partials/footer') %>

@@ -1,10 +1,19 @@
+<%- include("../partials/header")%>
+
+
+
+<div class="center">
+
 <form action="/update/<%=getReview._id%>/review/<%=editRecipeId%>?_method=PUT" method="POST">
 
-<label>Heading:</label>
-<input type="text" name="heading">
-<label>Detail</label>
-<input type="text" name="detail">
-<label>rate</label>
-<input type="number" name="ratee">
+<label>Heading: </label><br>
+<input type="text" name="heading"><br>
+<label>Detail: </label><br>
+<input type="text" name="detail"><br>
+<label>rate: </label><br>
+<input type="number" name="ratee"><br>
 <input type="submit" >
 </form>
+</div>
+
+<%- include("../partials/footer")%>

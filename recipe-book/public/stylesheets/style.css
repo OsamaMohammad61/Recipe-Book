@@ -71,3 +71,11 @@ body {
     background-color: #f0f0f0;
     border-radius: 5px;
 }
+<<<<<<< HEAD
+=======
+.center{
+  display:grid;
+  justify-content:center;  
+}
+
+>>>>>>> 98e9c8ce3cc01164bfcfd310d999f4e2b2228fc8

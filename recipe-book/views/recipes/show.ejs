@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
+<div class="center">
 
 <h1>Cuisine:<%=recipe.cuisine%></h1>
 <h2>Dish Name:<%=recipe.Dish%></h2>
 <h3>Time:<%=recipe.Time%></h3>
-<h4>Ingredents:<%=recipe.Ingredents%></h1>
+<h4>Ingredents:<%for (let i=0 ;i <recipe.Ingredients.length; i++){%></h1>
+  <p><%=recipe.Ingredients[i]%></p><%}%>
 <h5>Steps:<%=recipe.Steps%></h5>
 
 
@@ -39,5 +41,5 @@
   <%})%>
 
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
-  
+</div>
 <%- include('../partials/footer') %>

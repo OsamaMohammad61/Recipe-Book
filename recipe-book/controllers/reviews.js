@@ -45,6 +45,7 @@ const addReview = async (req, res) => {
 }
 
 const allReviews = async (req, res) => {
+  console.log('id of user: ' + req.user._id)
   const userReviews = await User.findById(req.user._id).populate('reviews')
 
   res.render('recipes/allreviews', { title: 'All Reviews', userReviews })

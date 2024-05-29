@@ -35,9 +35,26 @@ async function newRecipe(req, res) {
 
 async function addRecipe(req, res) {
   let person = req.user._id
+  const gotbody = req.body.Ingredients
+  const gotSteps = req.body.Steps
+  console.log(gotbody)
+  console.log(gotSteps)
+  const splitted = gotbody.trim().split(',')
+  const splitSteps = gotSteps.trim().split(',')
+
   try {
     const recipe = new Recipe(req.body)
     recipe.doneBY.push(person)
+    const ingredients = []
+    const steps = []
+    for (let i = 0; i < splitted.length; i++) {
+      ingredients.push(splitted[i])
+    }
+    for (let i = 0; i < splitSteps.length; i++) {
+      steps.push(splitSteps[i])
+    }
+    recipe.Ingredients = ingredients
+    recipe.Steps = steps
     await recipe.save()
 
     const getUser = await User.findById(person)
@@ -60,7 +77,7 @@ async function showAllRecipes(req, res) {
     let allRecipes = await Recipe.find({ cuisine: getCuisine.cuisine })
     res.render('recipes/allrecipes', { title: 'All Recipes', allRecipes })
   } catch (err) {
-    console.error(err) // Corrected error logging
+    console.error(err)
   }
 }
 
