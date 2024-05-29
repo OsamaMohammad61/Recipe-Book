@@ -78,6 +78,8 @@
 
 ##### ERD: [Draw.io](https://app.diagrams.net/)
 
+##### w3sCHOOLS: [w3schools](https://app.diagrams.net/)
+
 ##### Project Managemant: [Trello](https://trello.com/u/osamamohammad343/boards)
 
 ##### Markdown Guide: [SEI9 Github](https://github.com/SEI-09-Bahrain/u1_hw_markdown)
