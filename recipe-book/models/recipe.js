@@ -9,8 +9,8 @@ const recipeSchema = new Schema(
     cuisine: { type: String, required: true },
     Dish: { type: String, required: true },
     Time: { type: Number, required: true },
-    Ingredents: { type: String, required: true },
-    Steps: { type: String, required: true },
+    Ingredients: { type: [String], default: [] },
+    Steps: { type: [String], default: [] },
     doneBY: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     reviewon: [{ type: Schema.Types.ObjectId, ref: 'Review' }]
   },

@@ -1,251 +1,54 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
- 
+  height: 100vh;
+  display: grid;
 }
-footer{
-
-   background-color: #F3F6EF;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px; 
-    height: max-content;
-    
-  }
-
-#p1{
-  position: center;
-}
-header {
-  background-color:#F3F6EF;
-  color: #183ccc;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px; 
-}
-#nabbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px; 
-  
-}
-
-nav {
-  background-color:#F3F6EF;
-  padding: 10px 20px;
-  display: flex;
+.login{
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  gap: 20px; 
-  padding-right: 10px; 
-
-}
-
- nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  margin-left: 20px;
-position: center;
-
-}
-
-nav ul li a {
-  margin-right: 20px;
-  color: #0b2949;
-  text-align: center;
-}
-
-.login {
-  display: inline-block;
-  background-color: #0b2949;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
 .login img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-left: 10px;
+  height: 15px;
 }
 
-.homepage {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #f1f1f1;
-}
-
-/*.homepage h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-*/
-.homepage p {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-#login{
-
-    position: fixed; 
-
-    right: 0; 
-    margin: 20px; 
-    padding: 0; 
-    list-style: none; 
-  }
-  
-
-a[href='/recipes/allreviews'] {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-  color: #333;
-  text-decoration: none;
- 
-}
-
-/*footer {
-
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-*/
-footer p {
-
-  margin: 0;
-  text-align: center;
-}
-#login{
-  position: right;
-
-  margin: 100px;
-
-}
-h1{
-  position: absolute;
-}
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column; 
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  color: white;
-  font-family: blue;
- color: blue;
- 
-}
-
-header, footer {
-  background-color: #F3F6EF; 
-  padding: 20px;
-  text-align: center;
-}
-
-.content {
-  display: flex;
-  flex: 1; 
-}
-
-.split {
-  flex: 1; 
-  padding: 20px;
-  overflow: auto;
-}
-
-.left {
-  background-color:#0b2949; 
-}
-
-.right {
-  background-image: url('/recipe-book/public/img/images\ \(8\).jpg');
-  background-size: cover; 
-  background-position: center;
-}
-
-.centered {
-  display: flex;
-  flex-direction: column;
+.nav{
+  background-color: #ffe39c83;
+  display:flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
+  padding: 0 20px 0 20px;
+  height:10vh;
 }
 
-.centered img {
-  width: 400px;
-
-  margin-bottom: 20px;
+.homepage{
+  display:grid;
+  justify-content:center;
 }
-#p1{
-  color: #111;
-}
-#logout{
-  position: absolute;
-  right: 10px; /* يمكنك تعديل المسافة حسب الحاجة */
-  top: 10px;  /* يمكنك تعديل المسافة حسب الحاجة */
-}
-h1{
-  color: #0b2949;
-}
-h2{
-  color: #0b2949;
-  text-align: center;
-}
-#showdetail{
-width: 500px;
+.title{
+  display:grid;
+  justify-content:center;
 
 }
-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: center;
+.box{
+  border: 0.5vh solid #84b9fa83;
+  display:grid;
+  justify-content:center;
 }
+.img{
+  
+  background-image: url(../img/img5.jpeg);
+  background-repeat: no-repeat;
 
-.form-group {
-  margin-bottom: 15px;
 }
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.recipes{
+  display:grid;
+  justify-content:center;
+  
 }
-
-input[type="text"],
-input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  background-color: #5cb85c;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-
