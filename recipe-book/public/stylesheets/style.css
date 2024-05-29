@@ -1,54 +1,73 @@
 * {
-  box-sizing: border-box;
-  font-family: Helvetica;
-  color: #424748;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #424748;
 }
 
 body {
-  margin: 0;
-  height: 100vh;
-  display: grid;
-}
-.login{
-  display: flex;
-  justify-content: flex-end;
+    margin: 0;
+    padding: 0;
 }
 
-.login img {
-  height: 15px;
+#headerbackground {
+    background-color: #ffe39c83;
 }
 
-.nav{
-  background-color: #ffe39c83;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px 0 20px;
-  height:10vh;
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-.homepage{
-  display:grid;
-  justify-content:center;
+.title {
+    margin-right: auto;
 }
-.title{
-  display:grid;
-  justify-content:center;
 
+.links {
+    display: flex;
+    flex: 1; /* تحديد نسبة مرنة للروابط لتأخذ المساحة المتبقية */
+    justify-content: center;
 }
-.box{
-  border: 0.5vh solid #84b9fa83;
-  display:grid;
-  justify-content:center;
-}
-.img{
-  
-  background-image: url(../img/img5.jpeg);
-  background-repeat: no-repeat;
 
+.links a {
+    text-decoration: none;
+    color: #424748;
+    margin-right: 20px;
 }
-.recipes{
-  display:grid;
-  justify-content:center;
-  
+
+.links a:last-child {
+    margin-right: 0;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.logout-btn,
+.login-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.logout-btn a,
+.login-btn a {
+    text-decoration: none;
+    color: #424748;
+    display: flex;
+    align-items: center;
+}
+
+.login-btn img,
+.logout-btn img {
+    height: 15px;
+    margin-left: 5px;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
 }
