@@ -8,7 +8,10 @@ body {
   height: 100vh;
   display: grid;
   background-image: url(../img/img5.png);
-  background-image: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
 }
 
 ul {
@@ -37,6 +40,34 @@ li a {
 li a:hover:not(.active) {
   background-color: #444892;
 }
+
+.title {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+  color: #1b1d42;
+}
+.box {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+  color: #1b1d42;
+}
+.homepage {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+}
+.homepage1 {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+}
+.recipes {
+  display: grid;
+  justify-content: center;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -45,18 +76,4 @@ li a:hover:not(.active) {
   background-color: #1b1d42;
   color: #ffffff;
   text-align: center;
-}
-
-.homepage {
-  display: grid;
-  justify-content: center;
-}
-.title {
-  display: grid;
-  justify-content: center;
-}
-
-.recipes {
-  display: grid;
-  justify-content: center;
 }
