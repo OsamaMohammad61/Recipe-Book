@@ -4,10 +4,13 @@
 <h2>Detail:<%=findIt.detail%></h2>
 <h3>Rate:<%=findIt.rate%></h3>
 
-<a href="/edit/<%=findIt._id%>">Edit</a>
+<form action="/edit/<%=findIt._id%>" method="POST">
+  <input type="hidden" name="editpass" value="<%=hiddenID%>">
+<button>Edit it</button></form>
 <form action="/deleteit/<%=findIt._id%>?_method=DELETE" method="POST">
   <input type="hidden" name="repass" value="<%=hiddenID%>">
 <button>Delete it</button></form>
 
     
 <%- include("../partials/footer")%>
+

@@ -1,4 +1,4 @@
-<form action="/update/<%=getReview._id%>/review?_method=PUT" method="POST">
+<form action="/update/<%=getReview._id%>/review/<%=editRecipeId%>?_method=PUT" method="POST">
 
 <label>Heading:</label>
 <input type="text" name="heading">
@@ -6,6 +6,5 @@
 <input type="text" name="detail">
 <label>rate</label>
 <input type="number" name="ratee">
-
-<input type="submit">
+<input type="submit" >
 </form>

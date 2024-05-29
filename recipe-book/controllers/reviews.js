@@ -59,6 +59,8 @@ const Onereview = async (req, res) => {
 
 const update = async (req, res) => {
   const chReview = req.params.id
+  const goBack = req.params.reviewid
+  console.log(goBack)
   const updatedReview = req.body
   try {
     const editReview = await Review.findByIdAndUpdate(chReview, updatedReview)
@@ -66,15 +68,20 @@ const update = async (req, res) => {
     if (!editReview) {
       console.log('Review not found')
     }
-    res.redirect(`/review/${chReview}`)
+    res.redirect(`/recipes/${goBack}`)
   } catch (err) {
     console.error(err)
   }
 }
 const edit = async (req, res) => {
   const getReview = await Review.findById(req.params.id)
-  console.log(getReview)
-  res.render('recipes/editReviews', { title: 'Edit Review', getReview })
+  const editRecipeId = req.body.editpass
+  console.log(editRecipeId)
+  res.render('recipes/editReviews', {
+    title: 'Edit Review',
+    getReview,
+    editRecipeId
+  })
 }
 const deleteReview = async (req, res) => {
   try {
