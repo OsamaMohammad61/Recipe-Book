@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<div class="center">
 
 <h1>Cuisine:<%=recipe.cuisine%></h1>
 <h2>Dish Name:<%=recipe.Dish%></h2>
@@ -40,5 +41,5 @@
   <%})%>
 
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
-  
+</div>
 <%- include('../partials/footer') %>

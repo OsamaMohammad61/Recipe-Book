@@ -47,8 +47,8 @@ body {
   background-repeat: no-repeat;
 
 }
-.recipes{
+.center{
   display:grid;
-  justify-content:center;
-  
+  justify-content:center;  
 }
+
