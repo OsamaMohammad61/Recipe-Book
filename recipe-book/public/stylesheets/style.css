@@ -37,7 +37,7 @@ body {
 
 }
 .box{
-  border: 0.5vh solid #fcd97f83;
+  border: 0.5vh solid #84b9fa83;
   display:grid;
   justify-content:center;
 }
@@ -47,9 +47,8 @@ body {
   background-repeat: no-repeat;
 
 }
-
-/* .homeimg{
-  display: flex;
-justify-items: center;
-width: 50vh;
-} */
+.recipes{
+  display:grid;
+  justify-content:center;
+  
+}

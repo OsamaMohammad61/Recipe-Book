@@ -4,7 +4,7 @@
 
 <% filteredRecipes.forEach((c) =>{%>
 
-  <p><%=c.cuisine%></p>
-  <a href="/recipe/<%=c.id%>">show detail</a>
+  <a href="/recipe/<%=c.id%>">  <p><%=c.cuisine%></p>
+  </a>
   <%})%>
 <%- include('../partials/footer') %>
