@@ -34,7 +34,11 @@
 <%recipe.reviewon.forEach((re)=>{%>
   <%=re.heading%>
   <%=re.rate%>
-  <a href="/review/<%= recipe._id %>">Details</a>
+
+   <form action="/review/<%= re._id %>" method="POST">
+    <input type="hidden" name="recipeId" value="<%= recipe._id %>">
+    <button>Details</button>
+  </form>
   <%})%>
 
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>

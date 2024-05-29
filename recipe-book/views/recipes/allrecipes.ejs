@@ -1,9 +1,12 @@
-<%- include("../partials/header") %>
+<%- include('../partials/header') %>
 
-<% allRecipes.forEach((r) => { %>
-    <%=r.Dish%>
-    <a href="/recipes/<%=r._id%>">Recipe</a>
-<% }) %>
+<h1>Recipes</h1>
 
-<%- include("../partials/footer") %>
+
+<% allRecipes.forEach((c) =>{%>
+
+  <a href="/recipes/<%=c._id%>">  <p><%=c.Dish%></p>
+  </a>
+  <%})%>
+<%- include('../partials/footer') %>
 

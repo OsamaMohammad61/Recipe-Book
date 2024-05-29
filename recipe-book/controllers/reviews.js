@@ -54,37 +54,55 @@ const allReviews = async (req, res) => {
 }
 
 const Onereview = async (req, res) => {
-  //   const findIt = await Review.findById(req.params.id)
-  //   res.render('recipes/reviewForm', { title: 'Enter Review', findIt })
-  // }
+  const hiddenID = req.body.recipeId
 
-  try {
-    const findIt = await Review.findById(req.params.id)
-    if (!findIt) {
-      return res.status(404).send('Review not found')
-    }
-    res.render('recipes/reviewForm', { findIt })
-  } catch (err) {
-    console.error(err)
-    res.redirect('/recipes')
-  }
+  const findIt = await Review.findById(req.params.id)
+  res.render('recipes/reviewForm', { title: 'Enter Review', findIt, hiddenID })
 }
-/*
+
 const update = async (req, res) => {
   const chReview = req.params.id
+  const goBack = req.params.reviewid
+  console.log(goBack)
+  const updatedReview = req.body
   try {
-    const editReview = await review.findById(chReview)
+    const editReview = await Review.findByIdAndUpdate(chReview, updatedReview)
 
     if (!editReview) {
       console.log('Review not found')
-      res.redirect('/new')
     }
-    editReview.heading = req.body.heading
-    editReview.detail = req.body.detail
-    editReview.rate = req.body.rate
+    res.redirect(`/recipes/${goBack}`)
   } catch (err) {
     console.error(err)
   }
 }
-*/
-module.exports = { reviewForm, addReview, allReviews, Onereview }
+const edit = async (req, res) => {
+  const getReview = await Review.findById(req.params.id)
+  const editRecipeId = req.body.editpass
+  console.log(editRecipeId)
+  res.render('recipes/editReviews', {
+    title: 'Edit Review',
+    getReview,
+    editRecipeId
+  })
+}
+const deleteReview = async (req, res) => {
+  try {
+    gotIt = req.body.repass
+    console.log(req.body.repass)
+    const deletethis = await Review.findByIdAndDelete(req.params.id)
+
+    res.redirect(`/recipes/${gotIt}`)
+  } catch (err) {
+    console.error(err)
+  }
+}
+module.exports = {
+  reviewForm,
+  addReview,
+  allReviews,
+  Onereview,
+  update,
+  edit,
+  delete: deleteReview
+}
