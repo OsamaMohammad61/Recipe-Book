@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <div id="link">
-    <nav>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cuisines">Cuisine</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/showAll/recipes">Recipes</a>
-        </li>
-       
-        <li class="nav-item">
-          <a class="nav-link" href="/new">Add Recipes</a>
-        </li>
-      
-        <li class="nav-item">
-          <a class="nav-link" href="/allreviews">all Reviews</a>
-        </li> 
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 
-        <li class="nav-item">
-          <a href="/logout">LOG OUT</a>
-        </li> 
-           
+</head>
 
-          <li class="nav-item">
-            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-          </li> 
-          
-        
-      </ul>
-     </div>
+<body>   
+  <nav class="nav"></nav>
+  <ul>
+    <li><a  href="/">Home</a></li>
+    <li><a href="/cuisines">Cuisine</a></li>
+    <li><a href="/showAll/recipes">Recipes</a></li>
+    <% if (user) { %>
+    <li><a href="/new">Add Recipes</a></li>
+    <li><a href="/allreviews">all Reviews</a></li>
+    <li style="float:right"><a href="/logout">LOG OUT</a></li>
+    <% } else { %>
+    
+    
+    <li style="float:right">  <a href="/auth/google" class="login">LOG IN&nbsp;</a></li>
+    <% } %>
+  </ul>
+ 
+  </nav>
+</body>
+</html>
 
-        </nav>
-      </nav>
-    </nav>
-
-  </head>
-  <body>

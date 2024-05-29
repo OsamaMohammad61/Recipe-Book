@@ -1,107 +1,79 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
-  font-family: Arial, sans-serif;
-  color: #ebeff5;
+  display: grid;
 }
-
-header {
-  background-color: #f3f6ef;
-  padding: 20px;
+/* .login {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-nav {
-  background-color: #f3f6ef;
-  padding: 10px 20px;
-  display: flex;
-}
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  margin-left: 20px;
-  position: center;
-}
-
-nav ul li a {
-  margin-right: 20px;
-  color: #0b2949;
-  text-align: center;
-}
-
-.login {
-  display: inline-block;
-  background-color: #0b2949;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
+  justify-content: flex-end;
 }
 
 .login img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-left: 10px;
-}
+  height: 15px;
+} */
 
-.homepage {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #f1f1f1;
-  color: #0b2949;
-}
-
-.homepage p {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-
-.content {
+/* .nav {
+  background-color: #ffe39c83;
   display: flex;
-  flex: 1;
-}
-
-.split {
-  flex: 1;
-  padding: 20px;
-  overflow: auto;
-}
-
-.left {
-  background-color: #0b2949;
-}
-
-.right {
-  background-image: url('/recipe-book/public/img/images\ \(8\).jpg');
-  background-size: cover; /* This ensures that the background image covers the entire .right section */
-  background-position: center; /* This centers the background image */
-}
-
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: center; */
+/* padding: 0 20px 0 20px; */
+/* height: 10vh;
+} */
+/* .homepage {
+  display: grid;
   justify-content: center;
-  height: 100%;
+}
+.title {
+  display: grid;
+  justify-content: center;
+}
+.box {
+  border: 0.5vh solid #fcd97f83;
+  display: grid;
+  justify-content: center;
+} */
+.img {
+  background-image: url(../img/img5.png);
+  background-image: no-repeat;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1b1d42;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
+li a:hover:not(.active) {
+  background-color: #444892;
 }
-
-footer {
-  background-color: #f3f6ef;
-  padding: 20px;
-  display: flex;
-  color: #0b2949;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1b1d42;
+  color: #ffffff;
+  text-align: center;
 }
