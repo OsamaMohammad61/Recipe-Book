@@ -4,7 +4,6 @@ const router = express.Router()
 const recipesCtrl = require('../controllers/recipes')
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
-
 router.get('/recipe', recipesCtrl.index)
 
 router.get('/new', recipesCtrl.new)
@@ -14,6 +13,5 @@ router.get('/cuisines', recipesCtrl.showCuisines)
 router.get('/recipes/:id', recipesCtrl.show)
 router.delete('/recipe/:id', recipesCtrl.delete)
 router.get('/showAll/recipes', recipesCtrl.allRecipes)
-
 
 module.exports = router

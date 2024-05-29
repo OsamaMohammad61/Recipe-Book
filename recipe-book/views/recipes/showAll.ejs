@@ -1,9 +1,52 @@
-<%- include('../partials/header')%>
-<div class="center">
-  <h1>All Recipes</h1>
+<%- include('../partials/header') %>
 
-<%getAllRecipes.forEach((a)=>{%>
-  <a href="/recipes/<%=a._id%>"><%=a.Dish%></a>
+<div class="center">
+
+<h1>Cuisine:<%=recipe.cuisine%></h1>
+<h2>Dish Name:<%=recipe.Dish%></h2>
+<h3>Time:<%=recipe.Time%></h3>
+<h4>Ingredents:<%for (let i=0 ;i <recipe.Ingredients.length; i++){%></h1>
+  <p><%=recipe.Ingredients[i]%></p><%}%>
+<h5>Steps:<%=recipe.Steps%></h5>
+
+
+<br><br><h2>Reviews</h2>
+<% if (user) { %>
+<form action="/recipe/<%=recipe._id%>/addReview" method="POST">
+    <label> Enter the title of Review <br>
+    <input type="text" name="heading" placeholder="Title">
+    </label><br>
+    <label> Write the Review <br> 
+        <input type="text" name="detail" placeholder="eview">
+    </label><br>
+    <label> Rate it <br>
+        <select name="rate">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </label>
+    <input type="submit">
+
+</form>
+<form action="/recipe/<%=recipe._id%>?_method=DELETE" method="POST">
+  <button type="submit">Delete Recipe</button></form>
+<%recipe.reviewon.forEach((re)=>{%>
+  <%=re.heading%>
+  <%=re.rate%>
+
+   <form action="/review/<%= re._id %>" method="POST">
+    <input type="hidden" name="recipeId" value="<%= recipe._id %>">
+    <button>Details</button>
+  </form>
+
+
+  <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+
   <%})%>
+
 </div>
-<%- include('../partials/footer')%>
+
+<%- include('../partials/footer') %>
