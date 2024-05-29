@@ -1,99 +1,55 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
-header {
-  background-color: #F3F6EF;
-  padding: 20px;
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+}
+.login{
   display: flex;
+  justify-content: flex-end;
+}
+
+.login img {
+  height: 15px;
+}
+
+.nav{
+  background-color: #ffe39c83;
+  display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 0 20px 0 20px;
+  height:10vh;
+
 }
-nav {
-  background-color: #F3F6EF;
-  padding: 10px 20px;
+.homepage{
+  display:grid;
+  justify-content:center;
+}
+.title{
+  display:grid;
+  justify-content:center;
+
+}
+.box{
+  border: 0.5vh solid #fcd97f83;
+  display:grid;
+  justify-content:center;
+}
+.img{
+  
+  background-image: url(../img/img5.jpeg);
+  background-repeat: no-repeat;
+
+}
+
+/* .homeimg{
   display: flex;
-}
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  margin-left: 20px;
-  position: center;
-}
-nav ul li a {
-  margin-right: 20px;
-  color: #0B2949;
-  text-align: center;
-}
-.login {
-  display: inline-block;
-  background-color: #0B2949;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-}
-.login img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-left: 10px;
-}
-.homepage {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #F1F1F1;
-  color: #0B2949;
-}
-.homepage p {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  color: white;
-}
-.content {
-  display: flex;
-  flex: 1;
-}
-.split {
-  flex: 1;
-  padding: 20px;
-  overflow: auto;
-}
-.left {
-  background-color: #0B2949;
-}
-.right {
-  background-image: url('/recipe-book/public/img/images\ \(8\).jpg');
-  background-size: cover; /* This ensures that the background image covers the entire .right section */
-  background-position: center; /* This centers the background image */
-}
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
-}
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-footer {
-  background-color: #F3F6EF;
-  padding: 20px;
-  display: flex;
-  color: #0B2949;
-}
+justify-items: center;
+width: 50vh;
+} */
