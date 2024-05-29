@@ -1,8 +1,9 @@
 <%- include("../partials/header")%>
+<div class="center">
 
-<h1>Heading:<%=findIt.heading%></h1>
-<h2>Detail:<%=findIt.detail%></h2>
-<h3>Rate:<%=findIt.rate%></h3>
+<h1>Heading: <%=findIt.heading%></h1>
+<h2>Detail: <%=findIt.detail%></h2>
+<h3>Rate: <%=findIt.rate%></h3>
 
 <form action="/edit/<%=findIt._id%>" method="POST">
   <input type="hidden" name="editpass" value="<%=hiddenID%>">
@@ -11,6 +12,6 @@
   <input type="hidden" name="repass" value="<%=hiddenID%>">
 <button>Delete it</button></form>
 
-    
+    </div>
 <%- include("../partials/footer")%>
 

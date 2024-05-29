@@ -77,3 +77,8 @@ li a:hover:not(.active) {
   color: #ffffff;
   text-align: center;
 }
+
+.center {
+  display: grid;
+  justify-content: center;
+}
