@@ -11,7 +11,8 @@ module.exports = {
   showAllRecipes,
   delete: deleteRecipe,
   edit: editRecipe,
-  update
+  update,
+  allRecipes
 }
 
 async function index(req, res) {
@@ -125,4 +126,10 @@ async function update(req, res) {
   console.log(updatedrecipe)
   await Recipe.findByIdAndUpdate(recipetId, updatedrecipe)
   res.redirect(`/recipes/${recipetId}`)
+}
+
+async function allRecipes(req, res) {
+  const getAllRecipes = await Recipe.find({})
+
+  res.render('recipes/showAll', { title: 'All Recipes', getAllRecipes })
 }
