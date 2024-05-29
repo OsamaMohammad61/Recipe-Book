@@ -11,6 +11,7 @@ router.post('/recipes/addRecipe', recipesCtrl.addRecipe)
 router.get('/recipe/:id', ensureLoggedIn, recipesCtrl.showAllRecipes)
 router.get('/cuisines', recipesCtrl.showCuisines)
 router.get('/recipes/:id', recipesCtrl.show)
-router.delete('/recipe/:id', recipesCtrl.delete);
+router.delete('/recipe/:id', recipesCtrl.delete)
+router.get('/showAll/recipes', recipesCtrl.allRecipes)
 
 module.exports = router
