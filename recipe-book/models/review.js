@@ -4,6 +4,10 @@ const schema = mongoose.Schema
 
 const reviewSchema = new schema(
   {
+    dish: {
+      type: String,
+      required: true
+    },
     heading: {
       type: String,
       required: true
