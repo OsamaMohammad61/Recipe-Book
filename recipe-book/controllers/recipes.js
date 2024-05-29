@@ -51,6 +51,7 @@ async function addRecipe(req, res) {
 }
 
 async function showAllRecipes(req, res) {
+  console.log('Show all recipes')
   let getID = req.params.id
   try {
     let getCuisine = await Recipe.findById(getID)

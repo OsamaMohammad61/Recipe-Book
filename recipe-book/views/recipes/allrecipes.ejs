@@ -1,12 +1,8 @@
-<%- include("../partials/header")%>
+<%- include("../partials/header") %>
 
-<% allRecipes.forEach((r)=>{%>
+<% allRecipes.forEach((r) => { %>
     <%=r.Dish%>
     <a href="/recipes/<%=r._id%>">Recipe</a>
-    
-<%})%>
+<% }) %>
 
-
-
-
-<%- include('../partials/footer')%>
+<%- include("../partials/footer") %>
