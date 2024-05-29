@@ -49,6 +49,5 @@ body {
 }
 .recipes{
   display:grid;
-  justify-content:center;
-  
+  justify-content:center;  
 }
