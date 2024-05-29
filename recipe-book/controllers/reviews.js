@@ -9,12 +9,15 @@ const addReview = async (req, res) => {
   try {
     let byUser = req.user._id
     let reviewOn = req.params.id
+
     console.log('reviewOn', reviewOn)
     console.log('req.body', JSON.stringify(req.body, null, 2))
     console.log('byUser', byUser)
     const newreview = new Review(req.body)
     console.log('new review done')
+
     newreview.username = byUser
+    newreview.recipeID.push(reviewOn)
     await newreview.save()
     console.log(`Fetching user ${byUser}`)
     const getuser = await User.findById(byUser)

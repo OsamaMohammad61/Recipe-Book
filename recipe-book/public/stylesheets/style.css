@@ -1,81 +1,84 @@
 * {
-    box-sizing: border-box;
-    font-family: Helvetica;
-    color: #424748;
+  box-sizing: border-box;
+  font-family: Helvetica;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  background-image: url(../img/img5.png);
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
 }
 
-#headerbackground {
-    background-color: #ffe39c83;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1b1d42;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #444892;
 }
 
 .title {
-    margin-right: auto;
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+  color: #1b1d42;
+}
+.box {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+  color: #1b1d42;
+}
+.homepage {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+}
+.homepage1 {
+  display: grid;
+  justify-content: center;
+  background-color: #fdf4ed;
+}
+.recipes {
+  display: grid;
+  justify-content: center;
 }
 
-.links {
-    display: flex;
-    flex: 1; /* تحديد نسبة مرنة للروابط لتأخذ المساحة المتبقية */
-    justify-content: center;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1b1d42;
+  color: #ffffff;
+  text-align: center;
 }
 
-.links a {
-    text-decoration: none;
-    color: #424748;
-    margin-right: 20px;
+.center {
+  display: grid;
+  justify-content: center;
 }
-
-.links a:last-child {
-    margin-right: 0;
-}
-
-.login {
-    display: flex;
-    align-items: center;
-}
-
-.logout-btn,
-.login-btn {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.logout-btn a,
-.login-btn a {
-    text-decoration: none;
-    color: #424748;
-    display: flex;
-    align-items: center;
-}
-
-.login-btn img,
-.logout-btn img {
-    height: 15px;
-    margin-left: 5px;
-}
-
-.login-btn:hover,
-.logout-btn:hover {
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-<<<<<<< HEAD
-=======
-.center{
-  display:grid;
-  justify-content:center;  
-}
-
->>>>>>> 98e9c8ce3cc01164bfcfd310d999f4e2b2228fc8
