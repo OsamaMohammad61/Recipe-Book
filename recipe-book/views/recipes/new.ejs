@@ -1,21 +1,28 @@
 <%- include('../partials/header') %>
 <div class="center">
-    <h1>Add Recipes</h1>
+    <h1 id="recipes">Add Recipes</h1>
 
 <form id="new-form" action="/recipes/addRecipe" method="POST">
-<label>cuisine:</label><br>
-<input type="text" name="cuisine"><br>
+
+<label>Cuisine</label><br>
+<input id="new-recipes" type="text" name="cuisine"><br><br>
+
 <label>Dish</label><br>
-<input type="text" name="Dish"><br>
+<input id="new-recipes" type="text" name="Dish"><br><br>
+
 <label>Time</label><br>
-<input type="number" name="Time"><br>
-<label>Enter the Ingredents separate them by , </label><br>
-<textarea id="recipe-ingredients" name="Ingredients" rows="5" required></textarea><br>
-<label>Enter the Steps separate them by ,</label><br>
-<textarea id="recipe-steps" rows="5" name="Steps" required></textarea><br>
+<input id="new-recipes" type="time" name="Time"><br><br>
 
 
-<input type="submit" value="Add Recipe">
+<label>Enter the Ingredents separate them by comma <strong>" , "</strong></label><br>
+<textarea id="recipe-ingredients" name="Ingredients" rows="5" required></textarea><br><br>
+
+
+<label>Enter the Steps separate them by comma <strong>" , "</strong></label><br>
+<textarea id="recipe-steps" rows="5" name="Steps" required></textarea><br><br>
+
+
+<input class="button" type="submit" value="Add Recipe">
 </form>
 </div>
 <%- include('../partials/footer') %>

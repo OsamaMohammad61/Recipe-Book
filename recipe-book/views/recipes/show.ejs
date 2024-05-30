@@ -1,45 +1,47 @@
 <%- include('../partials/header') %>
 
 <div class="center">
-
-<h1>Cuisine:<%=recipe.cuisine%></h1>
-<h2>Dish Name:<%=recipe.Dish%></h2>
-<h3>Time:<%=recipe.Time%></h3>
-<h4>Ingredents:<%for (let i=0 ;i <recipe.Ingredients.length; i++){%></h1>
+  <div class="split left">
+ 
+<h3>Cuisine: <%= recipe.cuisine%></h3>
+<h3>Dish Name: <%= recipe.Dish%></h3>
+<h3>Time: <%= recipe.Time%></h3>
+<h3>Ingredents: <%for (let i=0 ;i <recipe.Ingredients.length; i++){%></h3>
   <p><%=recipe.Ingredients[i]%></p><%}%>
-<h5>Steps:<%=recipe.Steps%></h5>
+<h5>Steps:<br><%=recipe.Steps%></h5>
+  </div>
 
-
-<br><br><h2>Reviews</h2>
+<div class="split right">
+<br><br><h3>Reviews</h3>
 <% if (user) { %>
 <form action="/recipe/<%=recipe._id%>/addReview" method="POST">
     <label> Enter the title of Review <br>
-    <input type="text" name="heading" placeholder="Title">
-    </label><br>
+    <input id="review-box" type="text" name="heading" placeholder="Title">
+    </label><br><br>
     <label> Write the Review <br> 
-        <input type="text" name="detail" placeholder="eview">
-    </label><br>
+        <input id="review-box" type="text" name="detail" placeholder="review">
+    </label><br><br>
     <label> Rate it <br>
-        <select name="rate">
+        <select id="review-box" name="rate">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-    </label>
+    </label><br>
     <input type="hidden" name="dish" value="<%=recipe.Dish%>">
     <input type="submit">
-    <%}%>
+  
 </form>
 <form action="/recipe/<%=recipe._id%>?_method=DELETE" method="POST">
-  <button type="submit">Delete Recipe</button></form>
+  <button id="review-btn" type="submit">Delete Recipe</button></form>
 <%recipe.reviewon.forEach((re)=>{%>
   <%=re.heading%>
   <%=re.rate%>
 
    <form action="/review/<%= re._id %>" method="POST">
-    <input type="hidden" name="recipeId" value="<%= recipe._id %>">
+    <input id="review-btn" type="hidden" name="recipeId" value="<%= recipe._id %>">
     <button>Details</button>
   </form>
 
@@ -47,7 +49,8 @@
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
 
   <%})%>
-
+  <%}%>
+</div>
 </div>
 
 <%- include('../partials/footer') %>

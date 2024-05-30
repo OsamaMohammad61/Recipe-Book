@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 <div class="center">
-<h1>Cuisines</h1>
+  <div class="cuisine-page">
+<h1 >Cuisines</h1>
 
 <% filteredRecipes.forEach((c) =>{%>
-
-  <a href="/recipe/<%=c.id%>">  <p><%=c.cuisine%></p>
-  </a>
+  <a id="cuisine" href="/recipe/<%=c.id%>">  <p><%=c.cuisine%></p></a>
   <%})%>
+</div>
 </div>
 <%- include('../partials/footer') %>

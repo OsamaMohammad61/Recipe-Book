@@ -1,12 +1,14 @@
 <%- include("../partials/header") %>
 <div class="center">
+  
     <h1>All Reviews</h1>
-
+    <div class="allreviews">
 <% userReviews.reviews.forEach((r) => { %>
-    <h2><%= r.dish %></h2>
-    <h2><%= r.heading %></h2>
-    <h3><%= r.detail %></h3>
-    <h3><%= r.rate %></h3>
+    <h2>dish: <%= r.dish %></h2>
+    <h2>Name: <%= r.heading %></h2>
+    <h3>Review: <%= r.detail %></h3>
+    <h3>Rate: <%= r.rate %></h3>
 <% }) %>
+</div>
 </div>
 <%- include("../partials/footer") %>
