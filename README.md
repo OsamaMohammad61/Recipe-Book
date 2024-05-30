@@ -78,7 +78,7 @@
 
 ##### ERD: [Draw.io](https://app.diagrams.net/)
 
-##### w3sCHOOLS: [w3schools](https://app.diagrams.net/)
+##### w3Schools: [w3schools](https://www.w3schools.com/css/css_form.asp))
 
 ##### Project Managemant: [Trello](https://trello.com/u/osamamohammad343/boards)
 
